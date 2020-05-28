@@ -153,6 +153,7 @@ Example of this method:
     var requestConfig = new RequestConfiguration()
                     .WithSelect("esn,id")
                     .WithTop(100);
+		    
     var devices = await _api.ReportingDevices.GetDevicesDynamic(requestConfig);
 
 ##### Obligatory warning about "dynamic"
@@ -175,11 +176,6 @@ Example of this method:
     {
     	var deviceUid = device.Id;                    
     	fields = await _api.CustomDeviceFields.GetForDevice<CustomDeviceFields>((string)deviceUid, requestConfig);
-    
-    	if(fields.cdfValues.Any())
-    	{
-    		break;
-    	}
     }
 
 ##### Inheriting from ReportingDevice
@@ -206,11 +202,6 @@ Example of this method:
     {
     	var deviceUid = device.Id;                    
     	fields = await _api.CustomDeviceFields.GetForDeviceDynamic<CustomDeviceFields>((string)deviceUid, requestConfig);
-    
-    	if(fields.cdfValues.Any())
-    	{
-    		break;
-    	}
     }
 
 ##### Obligatory warning about "dynamic"
