@@ -1,6 +1,13 @@
 
 # AbsoluteAPI
 Absolute Public API library for .Net. This library is available on Nuget and is provided and supported by the Absolute Professional Services team.
+
+## Get from Nuget
+Nuget package is available here:
+https://www.nuget.org/packages/AbsolutePublicAPI/2.0.0
+
+
+
 ## Getting Started
 To get started, you need to get an access token from the Absolute console. Depending on what data center you are located, you can get it from https://cc.absolute.com/ (Canadian DC) or https://cc.us.absolute.com/ (United States DC). Detailed instructions on getting the API Tokens required for access can be found at [https://www.absolute.com/media/2221/abt-api-working-with-absolute.pdf](https://www.absolute.com/media/2221/abt-api-working-with-absolute.pdf) .
 
