@@ -23,13 +23,22 @@ If you login to a different URL that cc.absolute.com or cc.us.absolute.com, cont
 
 #### Configuration by File
 You can specify a configuration file to be used by the library at runtime. It will read and use the contents.
-To use this, use a constructor overload that includes the configuration file name.
+To use this, use a constructor overload that includes the configuration file name. Note that if the file path is not provided, it automatically assumes "appsettings.json" which will work in .Net Core (if the file is present in the project) but not in .Net Framework. If using .Net Framework, we recommend explicitly using ".\\appsettings.json" as the relative path value.
 
+    // Works in .Net Core for relative path
     var api = new AbsoluteAPI(
             "TOKEN",
             "SECRET",
             "api.absolute.com",
             "appsettings.json");
+	    
+    // Works in .Net Framework for relative path
+    var api = new AbsoluteAPI(
+            "TOKEN",
+            "SECRET",
+            "api.absolute.com",
+            ".\\appsettings.json");
+	   
 File contents:
 
     {
