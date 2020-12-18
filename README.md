@@ -3,8 +3,7 @@
 Absolute Public API library for .Net. This library is available on Nuget and is provided and supported by the Absolute Professional Services team.
 
 ## Get from Nuget
-Nuget package is available here:
-https://www.nuget.org/packages/AbsolutePublicAPI/2.0.0
+Nuget package is available here: https://www.nuget.org/packages/AbsolutePublicAPI/2.0.1
 
 
 
