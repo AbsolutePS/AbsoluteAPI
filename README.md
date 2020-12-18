@@ -47,6 +47,7 @@ File contents:
       "Region":  "cadc"
     }
 
+
 #### Configuration by Code
 You can also provide the configuration and token via an AbsoluteAPI constructor so you can load or use hard-coded settings if you like, and your application needs no configuration file at all. You'll notice that the content is the same as the above, and the DefaultDomain
 
@@ -59,6 +60,7 @@ First, create an AbsoluteAPIConfiguration object:
                     Region = "cadc",
                     Service = "abs1"
                 };
+
 Then, create an AbsoluteAPIToken object:
 
     var token = new AbsoluteAPIToken()
@@ -67,9 +69,30 @@ Then, create an AbsoluteAPIToken object:
                     Token = "TOKEN",
                     Secret = "SECRET"
                 };
+
 Finally, create the AbsoluteAPI object:
 
     var api = new AbsoluteAPI(configuration, token);
+
+#### Configuration in Production
+For production, we strongly recommend using a secret store to maintain the Token and Secret values. 
+
+You can (and should) use a configuration file tracked with the project called "appsettings.json" (by .Net convention) that stores the configuration settings. This configuration file owns the coupling between the service using this library and the Absolute API configuration (DefaultDomain, ApiVersion, Region, and Service).
+
+    var token = new AbsoluteAPIToken()
+    {
+        Name = "Production Token",
+        // Alternatively from Environment Variables, get these values from another secret store, e.g. Vault
+        Token = Environment.GetEnvironmentVariable(“AbsoluteApiToken”),
+        Secret = Environment.GetEnvironmentVariable(“AbsoluteApiSecret”),
+    };
+
+    var configuration = new AbsoluteAPIConfiguration().FromFile(".\\appsettings.json");
+
+    var api = new AbsoluteAPI(configuration, token);
+
+    // use api object as usual
+
 
 ### Request Configuration
 The RequestConfiguration class is a convenient way to configure requests and utilizies a fluent API to allow you to quickly modify request configuration without creating many objects of the same type.
