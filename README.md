@@ -3,7 +3,7 @@
 Absolute Public API library for .Net. This library is available on Nuget and is provided and supported by the Absolute Professional Services team.
 
 ## Get from Nuget
-Nuget package is available here: https://www.nuget.org/packages/AbsolutePublicAPI/2.0.1
+Nuget package is available here: https://www.nuget.org/packages/AbsolutePublicAPI
 
 
 
@@ -83,8 +83,8 @@ You can (and should) use a configuration file tracked with the project called "a
     {
         Name = "Production Token",
         // Alternatively from Environment Variables, get these values from another secret store, e.g. Vault
-        Token = Environment.GetEnvironmentVariable(ìAbsoluteApiTokenî),
-        Secret = Environment.GetEnvironmentVariable(ìAbsoluteApiSecretî),
+        Token = Environment.GetEnvironmentVariable(‚ÄúAbsoluteApiToken‚Äù),
+        Secret = Environment.GetEnvironmentVariable(‚ÄúAbsoluteApiSecret‚Äù),
     };
 
     var configuration = new AbsoluteAPIConfiguration().FromFile(".\\appsettings.json");
