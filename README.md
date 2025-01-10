@@ -1,5 +1,8 @@
 
 # AbsoluteAPI
+Moving forward, please refer to the latest v3 Public API documentation for all your integration needs.
+You can find the updated version of the v3 Public API at the following link:https://api.absolute.com/api-doc/doc.html%20target=%22_blank
+
 Absolute Public API library for .Net. This library is available on Nuget and is provided and supported by the Absolute Professional Services team.
 
 ## Get from Nuget
